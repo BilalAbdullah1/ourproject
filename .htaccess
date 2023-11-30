@@ -1,0 +1,4 @@
+#Error Page
+
+
+ErrorDocument 404 http://localhost/e-projectX/404.php

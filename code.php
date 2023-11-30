@@ -2,7 +2,6 @@
 
 include('security.php');
 
-
 // INSERT REGISTER
 if(isset($_POST['registerbtn']))
 {

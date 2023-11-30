@@ -36,7 +36,14 @@ include('includes/navbar.php');
             <label>Confirm Password</label>
             <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
           </div>
-          <input type="text" name="usertype" value="admin">
+          <div class="form-group">
+            <label>USER TYPE</label>
+            <select name="usertype" class="form-control">
+              <option value="admin"> Admin</option>
+              <option value="user"> User</option>
+            </select>
+
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
