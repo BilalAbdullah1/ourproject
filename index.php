@@ -18,10 +18,7 @@ include('includes/navbar.php');
   <!-- Content Row -->
   <div class="row">
 
-    <!-- Earnings (Monthly) Card Example -->
-    <?php
-    // include('security.php');
-    ?>
+
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-primary shadow h-100 py-2">
         <div class="card-body">
@@ -47,16 +44,25 @@ include('includes/navbar.php');
     </div>
 
     <!-- Earnings (Monthly) Card Example -->
+
     <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-success shadow h-100 py-2">
+      <div class="card border-left-primary shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Category </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <?php
+                $query = "SELECT COUNT(cid) as totalcategory FROM categorytb";
+                $query_run = mysqli_query($connection, $query);
+                $result = mysqli_fetch_assoc($query_run);
+                $totalAdmin = $result['totalcategory'];
+                echo '<h4>  total category: ' . $totalAdmin . '</h4>';
+                ?>
+              </div>
             </div>
             <div class="col-auto">
-              <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+              <i class="fas fa-calendar fa-2x text-gray-300"></i>
             </div>
           </div>
         </div>
@@ -65,6 +71,30 @@ include('includes/navbar.php');
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Category </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <?php
+                $query = "SELECT COUNT(pid) as totalproduct FROM prodcut";
+                $query_run = mysqli_query($connection, $query);
+                $result = mysqli_fetch_assoc($query_run);
+                $totalAdmin = $result['totalproduct'];
+                echo '<h4>  Total Product: ' . $totalAdmin . '</h4>';
+                ?>
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-calendar fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-info shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
@@ -88,7 +118,7 @@ include('includes/navbar.php');
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Pending Requests Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
